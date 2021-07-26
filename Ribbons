@@ -1,0 +1,78 @@
+_SECTION_BEGIN("Stoch Ribbon");
+
+VolColor =IIf(StochK(50)>StochD(10) AND StochK()>20 OR StochK()>80,colorGreen,colorRed); 
+
+	 SetBarFillColor( VolColor );
+	 PlotOHLC( 0, 0, 20, 20, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("Williams % R Ribbon");
+
+R = ((HHV(H,5) - C) /(HHV (H,5) -LLV (L,5))) *-100;
+ 
+	BlockColor = IIf( r>-20  , colorGreen, IIf( r>-80  , colorRed, colorRed ));
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 25, 25, 45, 45, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("RSI Ribbon");
+
+BlockColor = IIf(RSI()>EMA(RSI(),7) OR RSI()>50,colorGreen, IIf(RSI()<EMA(RSI(),7) OR RSI()<30,colorRed,colorRed));
+
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 50, 50, 70, 70, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("MA Ribbon");
+Condition = MA( Close, 7 ) > MA( Close, 20 ); 
+BlockColor =  IIf( Condition , colorGreen, colorRed );
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 75, 75, 95, 95, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+_SECTION_BEGIN("Stoch Ribbon");
+
+BlockColor =IIf(StochK(50)>StochD(10) AND StochK()>20 OR StochK()>80,colorGreen,colorRed); 
+
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 0, 0, 20, 20, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("Williams % R Ribbon");
+
+R = ((HHV(H,5) - C) /(HHV (H,5) -LLV (L,5))) *-100;
+ 
+	BlockColor = IIf( r>-20  , colorGreen, IIf( r>-80  , colorRed, colorRed ));
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 25, 25, 45, 45, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("RSI Ribbon");
+
+BlockColor = IIf(RSI()>EMA(RSI(),7) OR RSI()>50,colorGreen, IIf(RSI()<EMA(RSI(),7) OR RSI()<30,colorRed,colorRed));
+
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 50, 50, 70, 70, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
+
+_SECTION_BEGIN("MA Ribbon");
+Condition = MA( Close, 7 ) > MA( Close, 20 ); 
+BlockColor =  IIf( Condition , colorGreen, colorRed );
+	 SetBarFillColor( BlockColor );
+	 PlotOHLC( 75, 75, 95, 95, "", colorDefault, styleOwnScale | styleCandle, -0.5, 100 );
+
+_SECTION_END();
+
